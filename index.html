@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/dist/output.css">
+</head>
+
+<body>
+    <header>
+        <div class="header flex bg-[#383D40] w-full overflow-hidden">
+                  <div class="wrapper w-full p-2">
+                    <div class="header_content flex items-center justify-evenly  w-[80%] gap-20">
+                        <div class="header_logo md:block hidden">
+                              <img src="/img/logo.png" alt="logo">
+                        </div>
+
+                        <div class="header_menu md:flex hidden items-center text-white gap-12 ">
+                                <div class="header_menu_item cursor-pointer">Home</div>
+                                <div class="header_menu_item cursor-pointer">Product</div>
+                                <div class="header_menu_item cursor-pointer">Services</div>
+                                <div class="header_menu_item cursor-pointer">Blog</div>
+                                <div class="header_menu_item cursor-pointer">Contact</div>
+                        </div>
+
+                      </div>
+                      <div id = "menu-moile" class = "bg-transparent cursor-pointer md:hidden block float-right ">
+                        <svg class = "bg-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="30" height="30"><path d="M1 2.75A.75.75 0 0 1 1.75 2h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 2.75Zm0 5A.75.75 0 0 1 1.75 7h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 7.75ZM1.75 12h12.5a.75.75 0 0 1 0 1.5H1.75a.75.75 0 0 1 0-1.5Z"></path></svg>
+                      </div>
+                  </div>
+        </div>
+
+      </header>
+      
+      <div id = "mobile" class = "h-full w-[20rem] translate-x-[-100%] top-0 fixed z-[999] ease-in-out duration-300  ">
+            <div class = "flex items-center justify-between bg-[#277CFB] p-3 text-white">
+                    <div class = "font-bold text-xl">Menu</div>
+                    <span id = "close" class = "font-bold text-xl cursor-pointer" >X</span>
+            </div>
+
+            <ul class = "p-3 flex flex-col items-start gap-3 bg-white h-full">
+                 <li class = "cursor-pointer hover:bg-slate-200 p-1 w-full">Home</li>
+                 <li class = "cursor-pointer hover:bg-slate-200 p-1 w-full" >Product</li>
+                 <li class = "cursor-pointer hover:bg-slate-200 p-1 w-full" >Services</li>
+                 <li class = "cursor-pointer hover:bg-slate-200 p-1 w-full"  >Blog</li>
+                 <li class = "cursor-pointer hover:bg-slate-200 p-1 w-full" >Contact</li>
+            </ul>
+      </div>
+
+    <div id = "modal" class="modal fixed hidden z-[2] top-0 right-0 bottom-0 left-0 w-screen h-screen bg-slate-900/80">
+    </div>
+
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators hidden md:flex" style="margin-bottom: 150px;"  >
+        <li style="border-radius: 100%; width: 8px; height: 8px" data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li style="border-radius: 100%; width: 8px; height: 8px" data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li style="border-radius: 100%; width: 8px; height: 8px" data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+       
+   </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="/img/heroslide.png" alt="First slide">
+      </div>
+      <div class="carousel-item ">
+        <img class="d-block w-100" src="/img/heroslide.png" alt="First slide">
+      </div>
+      <div class="carousel-item ">
+        <img class="d-block w-100" src="/img/heroslide.png" alt="First slide">
+      </div>
+    </div>
+   
+  </div>
+
+  <div  class="section_body overflow-hidden pt-[7rem] px-[14rem] w-full flex items-center justify-center">
+            <iframe width="856" height="415" src="https://www.youtube.com/embed/j4gniXucu_M?start=34" 
+            title="YouTube video player" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+  </div>
+
+  <div class="section_body mt-40  w-full ">
+    <div class="section_body_content w-[60%] my-0 mx-auto flex min-[300px]:flex-wrap sm:flex-wrap md:flex-nowrap xl:flex-nowrap md:items-start items-center  justify-between gap-[0] md:gap-[7rem]">
+              <div class = "section_body_iphone flex items-center justify-center md:w-[50%] w-[100%] relative">
+                     <img class="" src="/img/iPhone 12 Mini.png" alt="">
+                     <img class="absolute left-[-30px] " src="/img/iPhone 12 Mini.png" alt="">
+              </div>
+  
+              <div class="section_body_text md:w-[48%] w-[100%] mt-20">
+                    <h1 class="font-bold text-3xl mb-[1.22rem]">Apps for Customers</h1>
+                    <p class="mb-3">The general idea behind "diversification" is to provide a Service ecosystem that 
+                      fully caters to all customer needs from the smallest needs
+                   </p>
+  
+                   <div class="social flex items-center gap-5">
+                      <img class = "w-[45%]" src="/img/googleplay.png" alt="">
+                      <img class = "w-[45%]"  src="/img/apple.png" alt="">
+                   </div>
+  
+                   <div class="more flex items-center w-full justify-center mt-2">    
+                      <a class="text-blue-600 underline-offset-1  " href="">See more</a> 
+                      <img class="w-[12px] h-[8px] ml-1 mt-1" src="/img/more.png" alt="">
+                  </div>
+              </div>
+    </div>
+ </div>
+
+  <div class ="lg:px-10 md:px-0 sm:px-0">
+    <div style="background-image: url(/img/bg.png);" class="section_body mt-40  w-full p-10 ">
+      <div class="w-full flex items-center justify-center mb-20">
+        <h1 class = "text-3xl font-medium text-center" >Outstanding features of the Client App</h1>
+      </div>
+        <div class="section_body_content w-[60%] my-0 mx-auto block md:flex items-start lg:items-start md:items-center justify-between gap-[7rem]">
+                  <div class = "section_body_iphone flex items-center justify-center md:w-[50%] w-[100%] relative">
+                         <img class="" src="/img/iPhone 12 Mini.png" alt="">
+                        
+                  </div>
+      
+                  <div class="section_body_text lg:w-[100%] w-[100%] h-[100%] mt-4 flex-col items-start hidden max-[1200px]:hidden sm:hidden md:hidden lg:flex">
+                        <div class = "flex gap-5 items-start mb-1">
+                              <div class = "flex flex-col">
+                                <div class="rounded-full  p-[0.7rem] flex items-center justify-center w-2 h-2 border-solid border-2 border-blue-600 text-blue-600 text-base" >1</div>
+                                <img class = "h-[70px]" src="/img/Arrow 1.png" alt="">
+                              </div>
+                                <div class="w-full h-full">
+                                    <h1  class="font-medium text-lg mb-1" >Search service in just one button</h1>
+                                    <h1 class="text-sm font-[350]" >Enjoy convenience in just one app.</h1>
+                                </div>
+                        </div>
+  
+  
+                        <div class = "flex gap-5 items-start mb-1 ">
+                          <div class = "flex flex-col">
+                            <div class="rounded-full  p-[0.7rem] flex items-center bg-blue-600 justify-center w-2 h-2 border-solid border-2 border-blue-600 text-white text-base" >2</div>
+                            <img class = "h-[70px]"  src="/img/Arrow 1.png" alt="">
+                          </div>
+                            <div class="w-full h-full">
+                                <h1  class="font-medium text-lg mb-1 text-blue-600" >Connecting diverse information</h1>
+                                <h1 class="text-sm font-[350]" >Not only chat now you can voice chat and make calls to quickly connect with the performer.</h1>
+                            </div>
+                        </div>
+  
+  
+  
+                        <div class = "flex gap-5 items-start mb-1  ">
+                          <div class = "flex flex-col">
+                            <div class="rounded-full  p-[0.7rem] flex items-center justify-center w-2 h-2 border-solid border-2 border-blue-600 text-blue-600 text-base" >3</div>
+                            <img class = "h-[70px]"  src="/img/Arrow 1.png" alt="">
+                          </div>
+                            <div class="w-full h-full">
+                                <h1  class="font-medium text-lg mb-1" >Update status service </h1>
+                                <h1 class="text-sm font-[350]" >You can know the status of repair or work completed while away from home.</h1>
+                            </div>
+                       </div>
+  
+  
+  
+                       <div class = "flex gap-5 items-start mb-1  ">
+                        <div class = "flex flex-col">
+                          <div class="rounded-full  p-[0.7rem] flex items-center justify-center w-2 h-2 border-solid border-2 border-blue-600 text-blue-600 text-base" >4</div>
+                          <img class = "h-[70px]"  src="/img/Arrow 1.png" alt="">
+                        </div>
+                          <div class="w-full h-full">
+                              <h1  class="font-medium text-lg mb-1" >Complete safe and quality service</h1>
+                              <h1 class="text-sm font-[350]" >You will feel secure when you see the report image and easily evaluate quality service whenever</h1>
+                          </div>
+                  </div>
+                  
+                 </div>
+       </div>
+    </div>  
+  </div>
+
+
+  <div class="section_body mt-40 w-full ">
+    <div class="section_body_content w-[60%] my-0 mx-auto flex min-[300px]:flex-wrap-reverse sm:flex-wrap-reverse md:flex-nowrap xl:flex-nowrap md:items-start items-center sm:items-center  justify-between gap-[0] md:gap-0 lg:gap-[7rem] ">
+              <div class="section_body_text md:w-[48%] w-[100%] mt-20 md:px-20 px-0 md:mr-[81px] lg:mr-[81px] sm:mr-0">
+                    <h1 class="font-bold text-3xl mb-[1.22rem]">Apps for Business</h1>
+                    <p class="mb-3">One of the advantages of Multi-Industry Services is that it helps reduce 
+                      the impact of unexpected fluctuations in any one industry.
+                      Bringing diverse consumers to businesses
+                   </p>
+  
+                   <div class="social flex items-center gap-5">
+                      <img class = "w-[45%]" src="/img/googleplay.png" alt="">
+                      <img class = "w-[45%]"  src="/img/apple.png" alt="">
+                   </div>
+  
+                   <div class="more flex items-center w-full justify-center mt-4">    
+                      <a class="text-blue-600 underline-offset-1  " href="">See more</a> 
+                      <img class="w-[12px] h-[8px] ml-1 mt-1" src="/img/more.png" alt="">
+                  </div>
+              </div>
+
+
+              <div class = "section_body_iphone flex items-center justify-center md:w-[50%] w-[100%] relative pl-0 md:pl-20">
+                <img class="" src="/img/iPhone 12 Mini.png" alt="">
+                <img class="absolute left-[-30px] " src="/img/iPhone 12 Mini.png" alt="">
+             </div>
+    </div>
+  </div>
+
+  <div class="section_body mt-40 w-full ">
+    <div class="section_body_content w-[60%] my-0 mx-auto block md:flex items-start justify-between gap-[0] md:gap-0 lg:gap-[7rem]">
+
+              <div class = "section_body_iphone flex items-center justify-center md:w-[50%] w-[100%] relative">
+                <img class="h-[20rem]" src="/img/apple2.png" alt="">
+             </div>
+
+              <div class="section_body_text md:w-[48%] w-[100%] mt-14  md:ml-[81px] lg:ml-[81px] sm:ml-0 ">
+                    <h1 class="font-bold text-3xl mb-[1.22rem]">Apps for Managers</h1>
+                    <p class="mb-3">Each branch of service provides is independent 
+                      of the other business areas, but the activities of the services 
+                      will be reported to senior management of the company that owns the application.
+                   </p>
+  
+                   <div class="social flex items-center gap-5">
+                      <img class = "w-[45%]" src="/img/googleplay.png" alt="">
+                      <img class = "w-[45%]"  src="/img/apple.png" alt="">
+                   </div>
+  
+                   <div class="more flex items-center w-full justify-center mt-2">    
+                      <a class="text-blue-600 underline-offset-1  " href="">See more</a> 
+                      <img class="w-[12px] h-[8px] ml-1 mt-1" src="/img/more.png" alt="">
+                  </div>
+              </div>
+    </div>
+ </div>
+
+  <div class="section_body my-40 w-full ">
+    <div class="w-[60%] mt-0 ml-auto mr-auto">
+                  <div class = "flex items-center justify-center flex-col text-center">
+                       <h1 class = "text-3xl font-medium mb-3" >Why choose us</h1>
+                       <div class = "md:w-[60%] w-[100%] text-base font-[400] text-center">Modern consumer trends: Focus on top-selected services.
+                         Changing business models to adapt to new consumer trends: 
+                         Applying the latest technology
+                      </div>
+                  </div>
+
+                  <div class="slider1 mt-[50px] relative">
+                          <div class="review-slide-item shadow-xl  mr-5   rounded-md  items-center justify-between  block gap-3 h-[150px] p-4 mb-[20px]">
+                                    <div class="img-review w-full flex items-center justify-center mb-[20px]">
+                                        <span class = "bg-blue-600 rounded-full">
+                                            <img class="p-3 w-[60px]" src="/img/slidelogo.png" alt="">
+                                        </span>
+                                    </div>
+
+                                    <div class="content-review w-full flex items-center justify-center">
+                                        <p class = "font-[500] text-base" >Professional</p>
+                                    </div>
+                          </div>
+
+                          <div class="review-slide-item shadow-xl     rounded-md  items-center justify-between  block gap-3 h-[150px] p-4 mb-[20px]">
+                            <div class="img-review w-full flex items-center justify-center mb-[20px]">
+                                <span class = "bg-blue-600 rounded-full">
+                                    <img class="p-3 w-[60px]" src="/img/slidelogo.png" alt="">
+                                </span>
+                            </div>
+
+                            <div class="content-review w-full flex items-center justify-center">
+                                <p class = "font-[500] text-base" >Professional</p>
+                            </div>
+                         </div>
+
+
+                         <div class="review-slide-item shadow-xl     rounded-md  items-center justify-between  block gap-3 h-[150px] p-4 mb-[20px]">
+                          <div class="img-review w-full flex items-center justify-center mb-[20px]">
+                              <span class = "bg-blue-600 rounded-full">
+                                  <img class="p-3 w-[60px]" src="/img/slidelogo.png" alt="">
+                              </span>
+                          </div>
+
+                          <div class="content-review w-full flex items-center justify-center">
+                              <p class = "font-[500] text-base" >Professional</p>
+                          </div>
+                         </div>
+
+
+                         <div class="review-slide-item shadow-xl     rounded-md  items-center justify-between  block gap-3 h-[150px] p-4 mb-[20px]">
+                          <div class="img-review w-full flex items-center justify-center mb-[20px]">
+                              <span class = "bg-blue-600 rounded-full">
+                                  <img class="p-3 w-[60px]" src="/img/slidelogo.png" alt="">
+                              </span>
+                          </div>
+
+                          <div class="content-review w-full flex items-center justify-center">
+                              <p class = "font-[500] text-base" >Professional</p>
+                          </div>
+                        </div>
+                   
+                  </div>
+    </div>
+  </div>
+
+
+  <div class="section_body my-40 w-full ">
+    <div class="w-[60%] mt-0 ml-auto mr-auto">
+                  <div class = "flex items-center justify-between text-center  w-[100%]">
+                       <h1 class = "text-3xl font-medium mb-3" >Learn more about the service</h1>
+                       <div class = "flex items-center gap-2">
+                         <div class = " text-base font-[400] hidden md:block text-center ">
+                             <img class="p-2 rounded-md cursor-pointer" src="/img/Arrow - Left 2.png" alt="">
+                         </div>
+                         <div class = " text-base font-[400] hidden md:block text-center bg-blue-500">
+                             <img class="py-1 px-2 rounded-md cursor-pointer" src="/img/Arrow - Right 2.png" alt="">
+                        </div>
+
+                       </div>
+                  </div>
+
+                  <div class="slider mt-[50px] relative">
+                            <div class="review-slide-item shadow-xl   flex  rounded-md  items-center justify-center flex-col gap-3 h-fit p-4 mb-[20px]">
+                                    <div class="img-review w-full flex items-center justify-center mb-[20px]">
+                                        
+                                            <img class="p-3 w-[10p0x] h-[100px]" src="/img/Path 15.png" alt="">
+                                        
+                                    </div>
+
+                                      <div class="flex items-center justify-center flex-col" >
+                                              <h1 class="text-2xl font-bold" >Cleaning</h1>
+                                              <p class = "text-sm">Experience ...</p>
+                                              <button class = "bg-blue-600 text-white px-4 py-2 mt-2 hidden md:block rounded-2xl" >Tìm hiểu thêm</button>
+                                      </div>
+                             </div>   
+                             
+                             <div class="review-slide-item shadow-xl   flex  rounded-md  items-center justify-center flex-col gap-3 h-fit p-4 mb-[20px]">
+                                  <div class="img-review w-full flex items-center justify-center mb-[20px]">
+                                      
+                                          <img class="p-3 w-[10p0x] h-[100px]" src="/img/Path 15.png" alt="">
+                                      
+                                  </div>
+
+                                    <div class="flex items-center justify-center flex-col" >
+                                            <h1 class="text-2xl font-bold" >Cleaning</h1>
+                                            <p class = "text-sm">Experience ...</p>
+                                            <button class = "bg-blue-600 text-white px-4 py-2 mt-2 hidden md:block rounded-2xl" >Tìm hiểu thêm</button>
+                                    </div>
+                             </div>       
+
+                             <div class="review-slide-item shadow-xl   flex  rounded-md  items-center justify-center flex-col gap-3 h-fit p-4 mb-[20px]">
+                                    <div class="img-review w-full flex items-center justify-center mb-[20px]">
+                                        
+                                            <img class="p-3 w-[10p0x] h-[100px]" src="/img/Path 15.png" alt="">
+                                        
+                                    </div>
+
+                                      <div class="flex items-center justify-center flex-col" >
+                                              <h1 class="text-2xl font-bold" >Cleaning</h1>
+                                              <p class = "text-sm">Experience ...</p>
+                                              <button class = "bg-blue-600 text-white px-4 py-2 mt-2 hidden md:block rounded-2xl" >Tìm hiểu thêm</button>
+                                      </div>
+                             </div>       
+
+
+                             <div class="review-slide-item shadow-xl   flex  rounded-md  items-center justify-center flex-col gap-3 h-fit p-4 mb-[20px]">
+                                      <div class="img-review w-full flex items-center justify-center mb-[20px]">
+                                          
+                                              <img class="p-3 w-[10p0x] h-[100px]" src="/img/Path 15.png" alt="">
+                                          
+                                      </div>
+
+                                        <div class="flex items-center justify-center flex-col" >
+                                                <h1 class="text-2xl font-bold" >Cleaning</h1>
+                                                <p class = "text-sm">Experience ...</p>
+                                                <button class = "bg-blue-600 text-white px-4 py-2 mt-2 hidden md:block rounded-2xl" >Tìm hiểu thêm</button>
+                                        </div>
+                             </div>       
+
+                               
+                 </div>
+  </div>
+  </div> 
+
+
+  <div class="section_body my-40 w-full ">
+    <div class="w-[60%] mt-0 ml-auto mr-auto">
+                  <div class = "flex items-center justify-center flex-col text-center">
+                       <h1 class = "text-3xl font-medium mb-3" >Top businesses</h1>
+                       <div class = "md:w-[60%] w-[100%] text-base font-[400] text-center">
+                        Accompanying the application is indispensable for businesses that play a great role and contribute to the ecosystem. The same goal becomes the spearhead in some areas.
+                      </div>
+                  </div>
+                  <div class="slider2 mt-[50px] relative">
+                    <div class="review-slide-item  flex  rounded-md  items-center justify-center flex-col gap-3 h-fit  mb-[20px]">
+                                    <img class="" src="/img/Rectangle 3468.png" alt="">
+                     </div>   
+                     
+                     <div class="review-slide-item    flex  rounded-md  items-center justify-center flex-col gap-3 h-fit  mb-[20px]">
+                                    <img class="" src="/img/Rectangle 3469.png" alt="">
+                    </div>        
+
+                    <div class="review-slide-item  flex  rounded-md  items-center justify-center flex-col gap-3 h-fit  mb-[20px]">
+                                     <img class="" src="/img/Rectangle 3470.png" alt="">
+                    </div>       
+
+
+                       
+                 </div>
+    </div>
+  </div>
+
+
+  <div class="section_body my-40 w-full ">
+    <div class="w-[60%] mt-0 ml-auto mr-auto">
+                  <div class = "flex items-center justify-center flex-col text-center">
+                       <h1 class = "text-3xl font-medium mb-3" >Business Feedback</h1>
+                       <div class = "w-[100%] text-base font-[400] text-center">Sharing from associates experience with iService
+                      </div>
+                  </div>
+
+                  <div class="slider2 mt-[50px] relative">
+                        <div class="review-slide-item  shadow-xl  flex flex-col  rounded-md  items-center justify-between   gap-3 h-fit py-5 px-4 mb-[20px]">
+                          <div class="img-review w-full gap-5 flex flex-col items-start justify-start mb-[20px]">
+                                <div class = "flex items-center justify-start gap-5">
+                                      <img src="/img/Ellipse 904.png" alt="">
+                                      <div>
+                                        <h1 class ="font-bold text-xl">John K.</h1>
+                                        <p class = "texl-sm font-light" >La pasteria</p>
+                                      </div>
+                                </div>
+
+                                <div class="flex gap-3 ">
+                                          <img class = "w-[20px] h-[20px]" src="/img/Star.png" alt="">
+                                          <img class = "w-[20px] h-[20px]" src="/img/Star.png" alt="">
+                                          <img class = "w-[20px] h-[20px]" src="/img/Star.png" alt="">
+                                          <img class = "w-[20px] h-[20px]" src="/img/Star.png" alt="">
+                                          <img class = "w-[20px] h-[20px]" src="/img/Star.png" alt="">
+
+                                        
+                                </div>
+                          </div>
+
+                          <div class="content-review w-full flex items-center justify-center">
+                              <p class = "font-[300] text-" >The reports and orders for each service are very specific. Is an application worth sustainable cooperation.</p>
+                          </div>
+                        </div>  
+
+                        <div class="review-slide-item  shadow-xl  flex flex-col  rounded-md  items-center justify-between   gap-3 h-fit py-5 px-4 mb-[20px]">
+                          <div class="img-review w-full gap-5 flex flex-col items-start justify-start mb-[20px]">
+                                <div class = "flex items-center justify-start gap-5">
+                                      <img src="/img/Ellipse 904.png" alt="">
+                                      <div>
+                                        <h1 class ="font-bold text-xl">John K.</h1>
+                                        <p class = "texl-sm font-light" >La pasteria</p>
+                                      </div>
+                                </div>
+
+                                <div class="flex gap-3 ">
+                                          <img class = "w-[20px] h-[20px]" src="/img/Star.png" alt="">
+                                          <img class = "w-[20px] h-[20px]" src="/img/Star.png" alt="">
+                                          <img class = "w-[20px] h-[20px]" src="/img/Star.png" alt="">
+                                          <img class = "w-[20px] h-[20px]" src="/img/Star.png" alt="">
+                                          <img class = "w-[20px] h-[20px]" src="/img/Star.png" alt="">
+
+                                        
+                                </div>
+                          </div>
+
+                          <div class="content-review w-full flex items-center justify-center">
+                              <p class = "font-[300] text-" >The reports and orders for each service are very specific. Is an application worth sustainable cooperation.</p>
+                          </div>
+                        </div> 
+
+                        <div class="review-slide-item  shadow-xl  flex flex-col  rounded-md  items-center justify-between   gap-3 h-fit py-5 px-4 mb-[20px]">
+                          <div class="img-review w-full gap-5 flex flex-col items-start justify-start mb-[20px]">
+                                <div class = "flex items-center justify-start gap-5">
+                                      <img src="/img/Ellipse 904.png" alt="">
+                                      <div>
+                                        <h1 class ="font-bold text-xl">John K.</h1>
+                                        <p class = "texl-sm font-light" >La pasteria</p>
+                                      </div>
+                                </div>
+
+                                <div class="flex gap-3 ">
+                                          <img class = "w-[20px] h-[20px]" src="/img/Star.png" alt="">
+                                          <img class = "w-[20px] h-[20px]" src="/img/Star.png" alt="">
+                                          <img class = "w-[20px] h-[20px]" src="/img/Star.png" alt="">
+                                          <img class = "w-[20px] h-[20px]" src="/img/Star.png" alt="">
+                                          <img class = "w-[20px] h-[20px]" src="/img/Star.png" alt="">
+
+                                        
+                                </div>
+                          </div>
+
+                          <div class="content-review w-full flex items-center justify-center">
+                              <p class = "font-[300] text-" >The reports and orders for each service are very specific. Is an application worth sustainable cooperation.</p>
+                          </div>
+                        </div> 
+                          
+                 </div>
+    </div>
+  </div>
+
+  <div class="section_body relative z-[10]  w-full ">
+    <div class="w-[60%] h-[300px] mt-0 ml-auto mr-auto shadow-2xl flex items-center relative">
+                 <div class="md:flex block items-end justify-between w-full md:p-20 p-5 gap-3" >
+                       <div class="md:w-[50%] w-full md:mb-0 sm:mb-2">
+                              <h1 class="font-bold text-2xl mb-3" >Contact us</h1>
+                              <p class = "text-base font-[350] text-[#121236]" >Please connect with us for answers and service experience completely and completely.</p>
+                       </div>
+
+                       <div class="md:w-[50%] w-full flex items-center justify-between" >
+                                <input class = "border border-solid rounded-l-lg outline-none border-slate-200 p-3 w-[74%]" placeholder="Enter your email for consultation" type="text">
+                                <button  class = "bg-blue-500 w-[120px] h-[60px] rounded-r-lg outline-none text-white flex items-center justify-center" >Đăng ký</button>
+                       </div>
+                 </div>  
+    </div>
+  </div>
+
+  <div class="section_body relative z-[-10] mt-2 w-full h-fit bg-[#383D40] text-white">
+    <div class="md:w-[60%] w-full mt-0 ml-auto mr-auto relative p-5">
+                <div class="flex items-end gap-[6.5rem] flex-wrap" >
+                          <div class="flex items-start gap-4 flex-col mt-[40px]">
+                               <h1 class = "font-bold text-2xl mb-1" >BrandName</h1>
+                               <p>Follow us:</p>
+                               <div class = "flex items-center gap-2">
+                                   <div class = "border border-solid cursor-pointer border-slate-100 rounded-full w-[30px] h-[30px] flex items-center justify-center" >
+                                       <img  src="/img/Vector (3).png" alt="">
+                                   </div>
+
+                                   <div  class = "border border-solid cursor-pointer border-slate-100 rounded-full w-[30px] h-[30px] flex items-center justify-center"  >
+                                       <img src="/img/NI.png" alt="">
+                                   </div>
+
+                                   <div  class = "border border-solid cursor-pointer border-slate-100 rounded-full w-[30px] h-[30px] flex items-center justify-center" >
+                                       <img src="/img/Vector (4).png" alt="">
+                                   </div>
+                               </div>
+                          </div>
+                          <div class = "flex flex-col items-start gap-2" >
+                              <h1 class="text-lg font-bold mb-1" >Home</h1>
+                              <p class = "text-sm" >About us</p>
+                              <p class = "text-sm" >About us</p>
+                              <p class = "text-sm" >About us</p>
+                              <p class = "text-sm" >About us</p>
+
+                              
+                          </div>  
+
+                          <div class = "flex flex-col items-start gap-2" >
+                            <h1 class="text-lg font-bold mb-1" >Home</h1>
+                            <p class = "text-sm" >About us</p>
+                            <p class = "text-sm" >About us</p>
+                            <p class = "text-sm" >About us</p>
+                            <p class = "text-sm" >About us</p>
+
+                            
+                          </div> 
+
+                        <div class = "flex flex-col items-start gap-2" >
+                          <h1 class="text-lg font-bold mb-1" >Home</h1>
+                          <p class = "text-sm" >About us</p>
+                          <p class = "text-sm" >About us</p>
+                          <p class = "text-sm" >About us</p>
+                          <p class = "text-sm" >About us</p>
+
+                          
+                        </div> 
+
+
+                       <div class = "flex flex-col items-start gap-2" >
+                        <h1 class="text-lg font-bold mb-1" >Home</h1>
+                        <p class = "text-sm" >About us</p>
+                        <p class = "text-sm" >About us</p>
+                        <p class = "text-sm" >About us</p>
+                        <p class = "text-sm" >About us</p>
+
+                        
+                       </div> 
+                         
+                </div>
+
+
+                <div class="flex items-center justify-center mt-[8rem]" >
+                            <p class="text-white text-sm font-extralight" >(c) 2023 - De2licious, All rights reserved.</p>
+                </div>
+    </div>
+  </div>
+
+  
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script  src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script  src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js" integrity="sha512-WNZwVebQjhSxEzwbettGuQgWxbpYdoLf7mH+25A7sfQbbxKeS5SQ9QBf97zOY4nOlwtksgDA/czSTmfj4DUEiQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src = "/js/slide.js" ></script>
+<script src = "/js/menu.js"></script>
+</body>
+</html>
